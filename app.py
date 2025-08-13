@@ -7,40 +7,47 @@ for nutrition-related queries using LangChain, ChromaDB, and OpenAI.
 """
 
 import os
+import sys
+import warnings
+from contextlib import redirect_stderr
+from io import StringIO
+
+# Suppress all warnings
+warnings.filterwarnings("ignore")
 
 from IPython.core.display import Image
 from IPython.core.display_functions import display
-
-# Disable telemetry to avoid warnings
-os.environ["LANGCHAIN_TRACING_V2"] = "false"
-os.environ["LANGCHAIN_ANALYTICS"] = "false"
-from src.workflow.agent_state import AgentState
-from src.workflow.workflow import WorkflowBuilder
+from src.agent.nutri_bot import NutritionBot
 from src.environment_loader import EnvironmentLoader
 
 
 def main():
     """Main application entry point."""
-
-    # Verify required environment variables
-    api_key = os.getenv('OPENAI_API_KEY')
-    if not api_key:
-        try:
-            EnvironmentLoader.get_required_env('OPENAI_API_KEY')
-        except ValueError as e:
-            print(f"Error: {e}")
-            return
     
     print("Welcome to Nutrition Care AI!")
     print("Ask me any nutrition-related questions.\n")
     
-    # Initialize workflow
+    # Initialize chatbot with stderr suppression to avoid telemetry warnings
     try:
-        workflow = WorkflowBuilder().create_workflow().compile()
-        print("Workflow initialized successfully")
+        # Suppress stderr during initialization to hide telemetry warnings
+        stderr_buffer = StringIO()
+        with redirect_stderr(stderr_buffer):
+            chatbot = NutritionBot()  # Initialize chatbot instance
+        print("NutritionBot initialized successfully")
     except Exception as e:
-        print(f"Failed to initialize workflow: {e}")
+        print(f"Failed to initialize NutritionBot: {e}")
         return
+    
+    # Demo query
+    try:
+        print("\n" + "="*60)
+        print("DEMO QUERY")
+        print("="*60)
+        response = chatbot.handle_customer_query("Daniela", "what are the most common nutrition disorders?")  # Call chatbot handler function
+        print(f"Response: {response}")
+        print("="*60)
+    except Exception as e:
+        print(f"Error with demo query: {e}")
     
     # Interactive query loop
     while True:
@@ -56,40 +63,17 @@ def main():
                 print("Please enter a valid question.")
                 continue
             
-            # Initialize state
-            initial_state: AgentState = {
-                "query": query,
-                "expanded_query": "",
-                "context": [],
-                "response": "",
-                "precision_score": 0.0,
-                "groundedness_score": 0.0,
-                "groundedness_loop_count": 0,
-                "precision_loop_count": 0,
-                "feedback": "",
-                "query_feedback": "",
-                "groundedness_check": False,
-                "loop_max_iter": 3
-            }
-            
             print(f"\nProcessing query: '{query}'")
             print("Please wait...")
             
-            # Run workflow
-            result = workflow.invoke(initial_state)
+            # Process query using chatbot
+            response = chatbot.handle_customer_query("user", query)
             
             # Display results
             print("\n" + "="*60)
-            print("RESULTS")
+            print("RESPONSE")
             print("="*60)
-            print(f"Original Query: {result['query']}")
-            print(f"Expanded Query: {result['expanded_query']}")
-            print(f"Groundedness Score: {result['groundedness_score']:.1f}/10")
-            print(f"Precision Score: {result['precision_score']:.1f}/10")
-            print(f"Refinement Loops: G={result['groundedness_loop_count']}, P={result['precision_loop_count']}")
-            print("\nResponse:")
-            print("-" * 40)
-            print(result['response'])
+            print(response)
             print("="*60)
             
         except KeyboardInterrupt:

@@ -1,4 +1,6 @@
 from langgraph.graph import END, StateGraph, START
+from langgraph.graph.state import CompiledStateGraph
+
 from src.workflow.agent_state import AgentState
 from src.workflow.context_retriever import ContextRetriever
 from src.workflow.evaluation.impl.groundedness_evaluator import GroundednessEvaluator
@@ -66,7 +68,7 @@ class WorkflowBuilder:
         self.groundedness_next_step = GroundednessNextStep()
 
 
-    def create_workflow(self) -> StateGraph:
+    def create_workflow(self) -> CompiledStateGraph:
         """Create and configure the complete RAG workflow for nutrition care AI.
         
         This method constructs a sophisticated state graph workflow that implements
@@ -146,4 +148,4 @@ class WorkflowBuilder:
         self.workflow.add_edge("refine_query", "expand_query")  # Refined queries go through expansion again.
         self.workflow.add_edge("max_iterations_reached", END)
 
-        return self.workflow
+        return self.workflow.compile()
