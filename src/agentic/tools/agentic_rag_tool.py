@@ -1,7 +1,7 @@
 """
 Agentic RAG Tool
 
-RAG-based agent tool for processing nutrition care queries through the 
+RAG-based agentic tool for processing nutrition care queries through the
 comprehensive workflow with context-aware response generation.
 """
 
@@ -12,18 +12,18 @@ from src.workflow.agent_state import AgentState
 
 
 class AgenticRAG:
-    """RAG-based agent tool for processing nutrition care queries.
+    """RAG-based agentic tool for processing nutrition care queries.
     
     This class provides a tool interface for executing the complete RAG workflow
     for nutrition care queries. It integrates with LangChain's tool system to
-    enable seamless integration with agent-based conversational systems.
+    enable seamless integration with agentic-based conversational systems.
     
     The class encapsulates the workflow initialization and execution, providing
     a clean interface for processing user queries through the comprehensive
     RAG pipeline including query expansion, context retrieval, response generation,
     and quality evaluation with iterative refinement.
     
-    The tool is designed to work within the nutrition care AI system's agent
+    The tool is designed to work within the nutrition care AI system's agentic
     framework, providing context-aware responses based on retrieved nutritional
     information and guidelines.
     """
@@ -95,7 +95,7 @@ _agentic_rag_instance = AgenticRAG()
 @tool
 def agentic_rag(query: str) -> Dict[str, Any]:
     """
-    RAG-based agent tool for processing nutrition care queries with context-aware responses.
+    RAG-based agentic tool for processing nutrition care queries with context-aware responses.
 
     This tool executes the complete RAG workflow for nutrition care queries,
     including query expansion, context retrieval, response generation, and

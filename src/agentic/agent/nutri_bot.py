@@ -4,15 +4,15 @@ from typing import Dict, List
 from langchain.agents import create_tool_calling_agent, AgentExecutor
 from langchain_core.prompts import ChatPromptTemplate
 
-from src.agent.tools.agentic_rag import agentic_rag
+from src.agentic.tools.agentic_rag_tool import agentic_rag
 from src.llm_client import LLMClient
-from src.agent.mem0_client import Mem0Client
+from src.agentic.mem0_client import Mem0Client
 
 
 class NutritionBot:
     def __init__(self):
         """
-        Initialize the NutritionBot class, setting up memory, the LLM client, tools, and the agent executor.
+        Initialize the NutritionBot class, setting up memory, the LLM client, tools, and the agentic executor.
         """
 
         self.memory = Mem0Client.get_mem0_client()
@@ -36,17 +36,17 @@ class NutritionBot:
         - Your primary goal is to help customers make informed nutrition decisions that align with their health conditions and personal preferences.
         """
 
-        # Build the prompt template for the agent
+        # Build the prompt template for the agentic
         prompt = ChatPromptTemplate.from_messages([
             ("system", system_prompt),  # System instructions
             ("human", "{input}"),  # Placeholder for human input
             ("placeholder", "{agent_scratchpad}")  # Placeholder for intermediate reasoning steps
         ])
 
-        # Create an agent capable of interacting with tools and executing tasks
+        # Create an agentic capable of interacting with tools and executing tasks
         agent = create_tool_calling_agent(self.client, tools, prompt)
 
-        # Wrap the agent in an executor to manage tool interactions and execution flow
+        # Wrap the agentic in an executor to manage tool interactions and execution flow
         self.agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
 
 
@@ -79,7 +79,6 @@ class NutritionBot:
             output_format="v1.1",
             metadata=metadata
         )
-
 
     def get_relevant_history(self, user_id: str, query: str) -> List[Dict]:
         """
@@ -139,7 +138,7 @@ class NutritionBot:
         Provide a helpful response that takes into account any relevant past interactions.
         """
 
-        # Generate a response using the agent
+        # Generate a response using the agentic
         response = self.agent_executor.invoke({"input": prompt})
 
         # Store the current interaction for future reference

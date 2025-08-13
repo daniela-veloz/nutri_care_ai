@@ -54,7 +54,7 @@ class GuardFilter:
         return GuardFilter._guard_client
     
     @staticmethod
-    def filter_input_with_llama_guard(user_input: str, model: str = "llama-guard-3-8b") -> str:
+    def filter(user_input: str, model: str = "meta-llama/llama-guard-4-12b") -> str:
         """Filter user input using Llama Guard to ensure content safety.
         
         This method processes user input through Groq's Llama Guard model to
@@ -69,7 +69,7 @@ class GuardFilter:
         Args:
             user_input: The raw input provided by the user that needs filtering.
             model: The Llama Guard model to use for filtering. Defaults to
-                  "llama-guard-3-8b" which provides balanced safety and performance.
+                  "llama-3.1-8b-instant" which provides balanced safety and performance.
         
         Returns:
             str: The filtered and validated input content, or None if the input
@@ -93,7 +93,7 @@ class GuardFilter:
                 model=model,
             )
             # Return the filtered input
-            return response.choices[0].message.content.strip()
+            return response.choices[0].message.content.strip().replace("\n", " ")
         except Exception as e:
             print(f"Error with Llama Guard: {e}")
             return None
