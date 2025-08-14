@@ -12,6 +12,51 @@ pinned: false
 
 NutriCare AI is an advanced AI-powered nutrition consultation system that leverages cutting-edge Retrieval-Augmented Generation (RAG) technology to provide personalized, evidence-based nutritional guidance for various health conditions. The system combines sophisticated query processing, memory management, and response validation to deliver accurate and contextually relevant nutrition advice.
 
+## 🤖 Showcased GenAI Capabilities
+
+This project demonstrates cutting-edge Generative AI techniques and patterns:
+
+### 🎯 **Retrieval-Augmented Generation (RAG)**
+- **Advanced Vector Search**: ChromaDB with semantic similarity search using OpenAI embeddings
+- **Cross-Encoder Reranking**: HuggingFace cross-encoders for result precision
+- **Contextual Compression**: Intelligent context filtering for relevant information
+- **Self-Query Retrieval**: Automatic query parsing and metadata filtering
+
+### 🧠 **Agentic AI Workflows**
+- **Multi-Step Processing Pipeline**: Query expansion → Context retrieval → Response generation → Evaluation → Refinement
+- **Intelligent Query Expansion**: Semantic enhancement without altering user intent
+- **Feedback-Driven Refinement**: Self-improving responses through groundedness and precision evaluation
+- **Adaptive Query Optimization**: Dynamic search refinement based on response quality
+
+### 💭 **Memory & Context Management**
+- **Persistent User Memory**: Mem0 integration for conversation history and user preferences
+- **Context-Aware Responses**: Maintains conversation flow and user-specific context
+- **Long-Term Memory Storage**: User preference tracking across multiple sessions
+
+### 🔍 **Advanced Document Processing**
+- **Intelligent PDF Parsing**: LlamaParse with table extraction and markdown conversion
+- **Semantic Chunking**: Context-aware text segmentation for optimal retrieval
+- **Hypothetical Question Generation**: Enhanced indexing through question-answer pairs
+- **Multi-Modal Processing**: Text, tables, and structured data extraction
+
+### 🛡️ **AI Safety & Guardrails**
+- **Content Moderation**: LlamaGuard integration for safety filtering
+- **Hallucination Detection**: Groundedness evaluation to prevent AI fabrication
+- **Response Validation**: Multi-stage evaluation for factual accuracy
+- **Medical Boundary Enforcement**: Clear limitations on medical advice scope
+
+### 🔄 **Evaluation & Quality Assurance**
+- **Groundedness Scoring**: Validates factual alignment with source material
+- **Precision Evaluation**: Measures response relevance to user queries
+- **Automated Response Refinement**: Self-correcting AI responses
+- **Quality Metrics**: Comprehensive scoring for response effectiveness
+
+### 🎛️ **Production-Ready Features**
+- **Rate Limiting**: IP-based throttling with usage analytics
+- **Error Handling**: Robust exception management and logging
+- **Scalable Architecture**: Modular design for easy deployment and maintenance
+- **Real-Time Processing**: Streamlit interface with live AI interactions
+
 ## 🏗️ High-Level Architecture
 
 The NutriCare AI system follows a sophisticated multi-stage pipeline designed to ensure accurate, relevant, and grounded responses:
