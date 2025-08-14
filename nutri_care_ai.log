@@ -1,0 +1,96 @@
+2025-08-13 16:32:35,022 - root - INFO - Streamlit application started
+2025-08-13 16:32:35,023 - root - INFO - Environment variables loaded successfully
+2025-08-13 16:32:39,918 - root - INFO - Streamlit application started
+2025-08-13 16:32:39,919 - root - INFO - Environment variables loaded successfully
+2025-08-13 16:32:39,920 - root - INFO - User logged in: daniela
+2025-08-13 16:32:39,981 - root - INFO - Streamlit application started
+2025-08-13 16:32:39,982 - root - INFO - Environment variables loaded successfully
+2025-08-13 16:32:57,496 - root - INFO - Streamlit application started
+2025-08-13 16:32:57,498 - root - INFO - Environment variables loaded successfully
+2025-08-13 16:32:57,501 - root - INFO - Initializing rate limiter
+2025-08-13 16:32:57,502 - root - INFO - Rate limiter initialized successfully
+2025-08-13 16:32:57,503 - src.rate_limit.ip_extractor - INFO - Extracted IP from headers: 127.0.0.1
+2025-08-13 16:32:57,505 - root - INFO - Initializing nutrition agent
+2025-08-13 16:32:57,505 - src.agentic.agent.nutri_agent - INFO - Initializing NutritionAgent
+2025-08-13 16:32:57,857 - httpx - INFO - HTTP Request: GET https://api.mem0.ai/v1/ping/ "HTTP/1.1 200 OK"
+2025-08-13 16:32:57,893 - root - INFO - Nutrition agent initialized successfully
+2025-08-13 16:32:57,895 - root - INFO - Processing query from user daniela: what are the most common nutrional disorders?
+2025-08-13 16:32:57,896 - src.agentic.agent.nutri_agent - INFO - Processing customer query for user daniela
+2025-08-13 16:32:58,424 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-13 16:32:58,516 - httpx - INFO - HTTP Request: POST https://api.mem0.ai/v1/memories/search/ "HTTP/1.1 200 OK"
+2025-08-13 16:32:59,183 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-13 16:33:00,759 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-13 16:33:02,069 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-13 16:33:02,073 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-08-13 16:33:07,086 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-13 16:33:07,689 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-13 16:33:08,141 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-13 16:33:08,633 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-13 16:33:16,608 - httpx - INFO - HTTP Request: POST https://api.mem0.ai/v1/memories/ "HTTP/1.1 200 OK"
+2025-08-13 16:33:16,614 - src.agentic.agent.nutri_agent - INFO - Successfully processed query for user daniela
+2025-08-13 16:33:16,616 - src.rate_limit.ip_extractor - INFO - Extracted IP from headers: 127.0.0.1
+2025-08-13 16:33:16,618 - root - INFO - Response generated successfully for user daniela
+2025-08-13 16:37:24,145 - root - INFO - Streamlit application started
+2025-08-13 16:37:24,145 - root - INFO - Environment variables loaded successfully
+2025-08-13 16:37:43,071 - root - INFO - Streamlit application started
+2025-08-13 16:37:43,072 - root - INFO - Environment variables loaded successfully
+2025-08-13 16:37:43,073 - root - INFO - User logged in: daniela
+2025-08-13 16:37:43,131 - root - INFO - Streamlit application started
+2025-08-13 16:37:43,132 - root - INFO - Environment variables loaded successfully
+2025-08-13 16:37:53,429 - root - INFO - Streamlit application started
+2025-08-13 16:37:53,431 - root - INFO - Environment variables loaded successfully
+2025-08-13 16:37:53,436 - root - INFO - Initializing rate limiter
+2025-08-13 16:37:53,436 - root - INFO - Rate limiter initialized successfully
+2025-08-13 16:37:53,437 - src.rate_limit.ip_extractor - INFO - Extracted IP from headers: 127.0.0.1
+2025-08-13 16:37:53,439 - root - INFO - Initializing nutrition agent
+2025-08-13 16:37:53,440 - src.agentic.agent.nutri_agent - INFO - Initializing NutritionAgent
+2025-08-13 16:37:53,659 - httpx - INFO - HTTP Request: GET https://api.mem0.ai/v1/ping/ "HTTP/1.1 200 OK"
+2025-08-13 16:37:53,689 - root - INFO - Nutrition agent initialized successfully
+2025-08-13 16:37:53,691 - root - INFO - Processing query from user daniela: how can I have better health?
+2025-08-13 16:37:53,692 - src.agentic.agent.nutri_agent - INFO - Processing customer query for user daniela
+2025-08-13 16:37:54,022 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-13 16:37:54,127 - httpx - INFO - HTTP Request: POST https://api.mem0.ai/v1/memories/search/ "HTTP/1.1 200 OK"
+2025-08-13 16:37:54,651 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-13 16:37:56,976 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-13 16:37:58,494 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-13 16:37:58,500 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-08-13 16:38:06,295 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-13 16:38:06,894 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-13 16:38:07,316 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-13 16:38:07,944 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-13 16:38:15,924 - httpx - INFO - HTTP Request: POST https://api.mem0.ai/v1/memories/ "HTTP/1.1 200 OK"
+2025-08-13 16:38:15,927 - src.agentic.agent.nutri_agent - INFO - Successfully processed query for user daniela
+2025-08-13 16:38:15,929 - src.rate_limit.ip_extractor - INFO - Extracted IP from headers: 127.0.0.1
+2025-08-13 16:38:15,931 - root - INFO - Response generated successfully for user daniela
+2025-08-13 16:40:44,223 - root - INFO - Streamlit application started
+2025-08-13 16:40:44,224 - root - INFO - Environment variables loaded successfully
+2025-08-13 16:41:05,688 - root - INFO - Streamlit application started
+2025-08-13 16:41:05,689 - root - INFO - Environment variables loaded successfully
+2025-08-13 16:41:05,692 - root - INFO - User logged in: daniela
+2025-08-13 16:41:05,751 - root - INFO - Streamlit application started
+2025-08-13 16:41:05,752 - root - INFO - Environment variables loaded successfully
+2025-08-13 16:41:14,641 - root - INFO - Streamlit application started
+2025-08-13 16:41:14,641 - root - INFO - Environment variables loaded successfully
+2025-08-13 16:41:14,644 - root - INFO - Initializing rate limiter
+2025-08-13 16:41:14,644 - root - INFO - Rate limiter initialized successfully
+2025-08-13 16:41:14,645 - src.rate_limit.ip_extractor - INFO - Extracted IP from headers: 127.0.0.1
+2025-08-13 16:41:14,646 - root - INFO - Initializing nutrition agent
+2025-08-13 16:41:14,646 - src.agentic.agent.nutri_agent - INFO - Initializing NutritionAgent
+2025-08-13 16:41:14,853 - httpx - INFO - HTTP Request: GET https://api.mem0.ai/v1/ping/ "HTTP/1.1 200 OK"
+2025-08-13 16:41:14,887 - root - INFO - Nutrition agent initialized successfully
+2025-08-13 16:41:14,889 - root - INFO - Processing query from user daniela: What should I eat for iron deficiency?
+2025-08-13 16:41:14,890 - src.agentic.agent.nutri_agent - INFO - Processing customer query for user daniela
+2025-08-13 16:41:15,480 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-13 16:41:15,567 - httpx - INFO - HTTP Request: POST https://api.mem0.ai/v1/memories/search/ "HTTP/1.1 200 OK"
+2025-08-13 16:41:16,756 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-13 16:41:18,395 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-13 16:41:19,339 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-13 16:41:19,345 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-08-13 16:41:25,237 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-13 16:41:25,820 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-13 16:41:26,382 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-13 16:41:26,728 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-13 16:41:42,354 - httpx - INFO - HTTP Request: POST https://api.mem0.ai/v1/memories/ "HTTP/1.1 200 OK"
+2025-08-13 16:41:42,360 - src.agentic.agent.nutri_agent - INFO - Successfully processed query for user daniela
+2025-08-13 16:41:42,362 - src.rate_limit.ip_extractor - INFO - Extracted IP from headers: 127.0.0.1
+2025-08-13 16:41:42,363 - root - INFO - Response generated successfully for user daniela
