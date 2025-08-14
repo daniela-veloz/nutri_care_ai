@@ -12,6 +12,8 @@ pinned: false
 
 NutriCare AI is an advanced AI-powered nutrition consultation system that leverages cutting-edge Retrieval-Augmented Generation (RAG) technology to provide personalized, evidence-based nutritional guidance for various health conditions. The system combines sophisticated query processing, memory management, and response validation to deliver accurate and contextually relevant nutrition advice.
 
+🚀 **[Live Demo Available](https://huggingface.co/spaces/daniela-veloz/nutri_care_ai)** - Try the application on HuggingFace Spaces!
+
 ## 🤖 Showcased GenAI Capabilities
 
 This project demonstrates cutting-edge Generative AI techniques and patterns:
