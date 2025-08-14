@@ -1,1 +1,2 @@
 /.env
+nutritional_db/chroma.sqlite3
