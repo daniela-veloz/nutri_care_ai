@@ -1,3 +1,13 @@
+---
+title: NutriCare AI - Intelligent Nutrition Disorder Specialist
+emoji: 🥗
+colorFrom: green
+colorTo: blue
+sdk: docker
+app_file: app.py
+pinned: false
+---
+
 # 🥗 NutriCare AI - Intelligent Nutrition Disorder Specialist
 
 NutriCare AI is an advanced AI-powered nutrition consultation system that leverages cutting-edge Retrieval-Augmented Generation (RAG) technology to provide personalized, evidence-based nutritional guidance for various health conditions. The system combines sophisticated query processing, memory management, and response validation to deliver accurate and contextually relevant nutrition advice.
