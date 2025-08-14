@@ -24,11 +24,11 @@ COPY . .
 # Create necessary directories
 RUN mkdir -p /app/nutritional_db
 
-# Expose Streamlit port
-EXPOSE 8501
+# Expose HuggingFace port
+EXPOSE 7860
 
 # Health check
-HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
+HEALTHCHECK CMD curl --fail http://localhost:7860/_stcore/health
 
 # Run the Streamlit app
-ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=7860", "--server.address=0.0.0.0", "--server.headless=true", "--server.enableCORS=false", "--server.enableXsrfProtection=false"]
