@@ -309,7 +309,3 @@ streamlit run app.py
 - Usage statistics display
 - Automatic limit enforcement
 - Fair access controls
-
-## 🤝 Contributing
-
-We welcome contributions to NutriCare AI! Please read our contributing guidelines and submit pull requests for any improvements.

@@ -1,34 +1,45 @@
-FROM python:3.9-slim
+FROM python:3.9
 
-WORKDIR /app
-
-# Install system dependencies
 RUN apt-get update && apt-get install -y \
-    build-essential \
-    curl \
     git \
-    && rm -rf /var/lib/apt/lists/*
+    git-lfs \
+    ffmpeg \
+    libsm6 \
+    libxext6 \
+    cmake \
+    rsync \
+    libgl1-mesa-dri \
+    && rm -rf /var/lib/apt/lists/* \
+    && git lfs install
 
-# Copy requirements first to leverage Docker cache
-COPY requirements.txt .
+# Create a user with proper permissions
+RUN useradd -m -u 1000 user
 
-# Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+# Set up directories with proper permissions
+WORKDIR /app
+RUN chown -R user:user /app
 
-# Install Streamlit (not in requirements.txt)
-RUN pip install streamlit
+# Create Streamlit config directory in user home
+RUN mkdir -p /home/user/.streamlit && chown -R user:user /home/user/.streamlit
 
-# Copy the entire application
-COPY . .
+# Switch to user before installing dependencies
+USER user
+ENV HOME=/home/user
+ENV PATH=/home/user/.local/bin:$PATH
 
-# Create necessary directories
-RUN mkdir -p /app/nutritional_db
+# Copy and install requirements
+COPY --chown=user:user requirements.txt .
+RUN pip install --user --no-cache-dir -r requirements.txt
 
-# Expose HuggingFace port
+# Copy application code
+COPY --chown=user:user . .
+
+# Create rate limits directory with proper permissions
+RUN mkdir -p /app/.rate_limits
+
+# Disable Streamlit usage stats collection
+ENV STREAMLIT_SERVER_GATHER_USAGE_STATS=false
+
 EXPOSE 7860
 
-# Health check
-HEALTHCHECK CMD curl --fail http://localhost:7860/_stcore/health
-
-# Run the Streamlit app
-ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=7860", "--server.address=0.0.0.0", "--server.headless=true", "--server.enableCORS=false", "--server.enableXsrfProtection=false"]
+CMD ["streamlit", "run", "app.py", "--server.port=7860", "--server.address=0.0.0.0"]
