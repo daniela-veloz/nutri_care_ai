@@ -49,6 +49,7 @@ This notebook contains the complete pipeline for:
 - PDF document parsing using LlamaParse
 - Text chunking and preprocessing
 - Vector embedding generation
+- hypothetical questions technique
 - ChromaDB storage and indexing
 ### Core Processing Flow
 
@@ -240,21 +241,11 @@ streamlit run app.py
 
 ### Content Safety
 - **LlamaGuard Integration**: Filters inappropriate content
-- **Medical Disclaimer**: Provides general guidance only
-- **Professional Consultation**: Recommends healthcare professional consultation
 
 ### Data Privacy
 - **IP-based Tracking**: No personal data storage
 - **Session Management**: Temporary conversation memory
 - **Secure Processing**: Environment-based API key management
-
-## 📊 Monitoring & Analytics
-
-### Logging System
-- Comprehensive application logging
-- User interaction tracking
-- Error monitoring and reporting
-- Performance metrics collection
 
 ### Rate Limiting
 - IP-based request throttling
@@ -265,8 +256,3 @@ streamlit run app.py
 ## 🤝 Contributing
 
 We welcome contributions to NutriCare AI! Please read our contributing guidelines and submit pull requests for any improvements.
-
-
-## ⚠️ Medical Disclaimer
-
-**Important**: NutriCare AI provides general nutritional guidance only and is not a substitute for professional medical advice, diagnosis, or treatment. Always consult qualified healthcare professionals for medical concerns and before making significant dietary changes.
