@@ -36,3 +36,28 @@ requests>=2.25.0
 
 # Async support (used by many AI libraries)
 aiohttp>=3.8.0
+
+# Core web framework
+streamlit>=1.48.0
+
+# Memory management
+mem0ai>=1.0.0
+
+# Groq API for guardrails  
+groq>=0.8.0
+
+# Machine learning utilities
+scikit-learn>=1.3.0
+
+# Async support enhancements
+nest-asyncio>=1.5.0
+
+# Data validation
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+
+# Enhanced JSON handling
+jsonschema>=4.0.0
+
+# Text processing
+regex>=2023.0.0
